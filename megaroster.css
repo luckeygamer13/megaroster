@@ -7,6 +7,24 @@ section > div {
   margin: 20px auto;
 }
 
+table {
+  table-layout: fixed;
+  width: 90vw;
+}
+
+th {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.promote {
+  width: 85px;
+
+}
+
 form {
   margin-top: 50px;
 }
