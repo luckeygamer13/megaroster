@@ -5,32 +5,38 @@ const form = document.querySelector('form')
 const roster = document.querySelector('.roster')
 
     const table = document.createElement('table')
-    document.body.appendChild(table)
+    roster.appendChild(table)
     const row1 = document.createElement('tr')
     table.appendChild(row1)
     
     const spc = document.createElement('th')
+    spc.style.border = "thin solid black";
     row1.appendChild(spc)
 
     const title = document.createElement('th')
+    title.style.border = "thin solid black";
     title.textContent = 'First Name'
     row1.appendChild(title)
 
     const title2 = document.createElement('th')
+    title2.style.border = "thin solid black";
     title2.textContent = 'Last Name'
     row1.appendChild(title2)
 
-    row1.appendChild(spc)
+    const spc2 = document.createElement('th')
+    spc2.style.border = "thin solid black";
+    row1.appendChild(spc2)
 
 
 const addPerson = (ev) => {
-    debugger
     ev.preventDefault()
     const field = ev.target
     const roster = document.querySelector('.roster')
 
     const row2 = document.createElement('tr')
     table.appendChild(row2)
+
+    table.insertBefore(row2, table.childNodes[1])
 
     const spc1 = document.createElement('td')
     spc1.style.border = "thin solid black";
@@ -62,6 +68,19 @@ const addPerson = (ev) => {
     remove.style.color = 'white'
     remove.style.border = "thin solid black";
     spc2.appendChild(remove)
+
+    function highlight(){
+    this.parentNode.parentNode.style.backgroundColor = 'yellow'
 }
+
+    function bye(){
+    this.parentNode.parentNode.remove()
+    }
+
+    remove.addEventListener('click', bye)
+    promote.addEventListener('click', highlight)
+}
+
+
 
 form.addEventListener('submit', addPerson)
