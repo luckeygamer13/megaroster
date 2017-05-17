@@ -22,7 +22,7 @@ td {
 
 .promote {
   width: 85px;
-
+  border: 1px solid black;
 }
 
 form {
